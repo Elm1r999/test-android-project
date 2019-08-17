@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "994087620668",
+    "firebase_url": "https://expo2020-a2d5a.firebaseio.com",
+    "project_id": "expo2020-a2d5a",
+    "storage_bucket": "expo2020-a2d5a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:994087620668:android:3e5d8aaed6dcccc1",
+        "android_client_info": {
+          "package_name": "com.view.expo2020"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "994087620668-l00g98995vkchseouhbt7h73rocp5tas.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.view.expo2020",
+            "certificate_hash": "adc694dc4cbb831ced94d16ef4bd65f5bcbfa8b4"
+          }
+        },
+        {
+          "client_id": "994087620668-94t86bq87rfels2pv5qbm3qcjhnkhjs7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEYOi_eUh60n-ooV1q42yM5lC2u1inKV0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "994087620668-94t86bq87rfels2pv5qbm3qcjhnkhjs7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
