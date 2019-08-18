@@ -28,8 +28,8 @@ public class LoginActivity extends AppCompatActivity {
     Animation frombottom, fromtop;
     Button btnSignIn, btnSignUp;
     TextView signInText;
-    EditText signinEmail, signinUsername, signinPassword; //sign in details
-    EditText newEmailText, newUsernameText, newPasswordText; //sign up details
+    EditText signinUsername, signinPassword; //sign in details
+    EditText newUsernameText, newPasswordText; //sign up details
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference users;
@@ -39,7 +39,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
-        //Firebase
         firebaseDatabase = FirebaseDatabase.getInstance();
         users = firebaseDatabase.getReference().child("Users");
 
@@ -51,14 +50,12 @@ public class LoginActivity extends AppCompatActivity {
         btnSignIn = findViewById(R.id.btnSignIn);
         btnSignUp = findViewById(R.id.btnSignUp);
 
-        signinEmail = findViewById(R.id.emailText);
         signinUsername = findViewById(R.id.usernameText);
         signinPassword = findViewById(R.id.passwordText);
 
         btnSignIn.startAnimation(frombottom);
         btnSignUp.startAnimation(frombottom);
         signInText.startAnimation(fromtop);
-        signinEmail.startAnimation(fromtop);
         signinUsername.startAnimation(fromtop);
         signinPassword.startAnimation(fromtop);
 
@@ -72,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                signIn(signinEmail.getText().toString(), signinPassword.getText().toString());
+                signIn(signinUsername.getText().toString(), signinPassword.getText().toString());
             }
         });
     }
@@ -86,17 +83,18 @@ public class LoginActivity extends AppCompatActivity {
                     if(!user.isEmpty()){
                         User login = dataSnapshot.child(user).getValue(User.class);
 
-                        assert login != null;
-                        if (login.getPassword().equals(passw0rd)) {
-                                Toast.makeText(LoginActivity.this, "Login successful! Signing in...", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
-                                startActivity(intent);
-                            }
-                            else
-                                Toast.makeText(LoginActivity.this, "Wrong password!", Toast.LENGTH_SHORT).show();
+                        if (login != null) {
+                            if (login.getPassword().equals(passw0rd)) {
+                                    Toast.makeText(LoginActivity.this, "Login successful! Signing in...", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
+                                    startActivity(intent);
+                                }
+                                else
+                                    Toast.makeText(LoginActivity.this, "Wrong password!", Toast.LENGTH_SHORT).show();
+                        }
                     }
                     else
-                        Toast.makeText(LoginActivity.this, "Please enter your username", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Please enter your details", Toast.LENGTH_SHORT).show();
                 }
                 else
                     Toast.makeText(LoginActivity.this, "User does not exist!", Toast.LENGTH_SHORT).show();
@@ -117,7 +115,6 @@ public class LoginActivity extends AppCompatActivity {
         View signUp_layout = inflater.inflate(R.layout.activity_sign_up,null);
 
         newUsernameText = signUp_layout.findViewById(R.id.newUsernameText);
-        newEmailText = signUp_layout.findViewById(R.id.newEmailText);
         newPasswordText = signUp_layout.findViewById(R.id.newPasswordText);
 
         alertDialog.setView(signUp_layout);
@@ -127,16 +124,16 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 final User user = new User(
-                        newEmailText.getText().toString(),
                         newUsernameText.getText().toString(),
                         newPasswordText.getText().toString());
+
                 users.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.child(user.getUserName()).exists())  //  || dataSnapshot.child(user.getEmail()).exists())
+                        if (dataSnapshot.child(user.getUsername()).exists())
                             Toast.makeText(LoginActivity.this, "User already exists!", Toast.LENGTH_SHORT).show();
                         else {
-                            users.child(user.getUserName()).setValue(user);
+                            users.child(user.getUsername()).setValue(user);
                             Toast.makeText(LoginActivity.this, "User registered successfully!", Toast.LENGTH_SHORT).show();
                         }
                     }
