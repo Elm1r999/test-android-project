@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="8dp"
@@ -22,26 +23,9 @@
             android:fontFamily="@font/mm"
             android:gravity="center"
             android:lineSpacingExtra="6dp"
-            android:text="Sign Up"
+            android:text="@string/signUp_title"
             android:textColor="#FFF"
             android:textSize="45sp" />
-
-
-        <EditText
-            android:id="@+id/newEmailText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="25dp"
-            android:background="@drawable/bginput"
-            android:hint="Email Address"
-            android:paddingLeft="20dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:textColor="#FFF"
-            android:textColorHint="#87ffffff"
-            android:textSize="25sp"
-            android:textStyle="bold" />
-
 
         <EditText
             android:id="@+id/newUsernameText"
@@ -49,15 +33,18 @@
             android:layout_height="wrap_content"
             android:layout_margin="25dp"
             android:background="@drawable/bginput"
-            android:hint="Username"
+            android:hint="@string/signUp_username"
             android:inputType="text"
             android:paddingLeft="20dp"
+            android:paddingRight="20dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:textColor="#FFF"
             android:textColorHint="#87ffffff"
             android:textSize="25sp"
-            android:textStyle="italic" />
+            android:textStyle="italic"
+            android:paddingStart="20dp"
+            tools:ignore="Autofill" />
 
         <EditText
             android:id="@+id/newPasswordText"
@@ -65,15 +52,18 @@
             android:layout_height="wrap_content"
             android:layout_margin="25dp"
             android:background="@drawable/bginput"
-            android:hint="Password"
+            android:hint="@string/signUp_password"
             android:inputType="textPassword"
             android:paddingLeft="20dp"
+            android:paddingRight="20dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:textColor="#FFF"
             android:textColorHint="#87ffffff"
             android:textSize="25sp"
-            android:textStyle="italic" />
+            android:textStyle="italic"
+            android:paddingStart="20dp"
+            tools:ignore="Autofill" />
 
     </LinearLayout>
 
