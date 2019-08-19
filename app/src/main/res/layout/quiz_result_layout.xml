@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    app:cardElevation="10dp"
+    app:cardBackgroundColor="@android:color/black"
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <TextView
+            android:id="@+id/totalQuestions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:background="@drawable/bginput"
+            android:hint="Total Questions: "
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="#FFF"
+            android:textColorHint="#87ffffff"
+            android:textSize="25sp"
+            android:textStyle="italic"
+            android:paddingStart="20dp"
+            />
+
+        <TextView
+            android:id="@+id/correctAnswers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:background="@drawable/bginput"
+            android:hint="Correct Answers: "
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="#FFF"
+            android:textColorHint="#87ffffff"
+            android:textSize="25sp"
+            android:textStyle="italic"
+            android:paddingStart="20dp"
+             />
+
+        <TextView
+            android:id="@+id/wrongAnswers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:background="@drawable/bginput"
+            android:hint="Wrong Answers: "
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="#FFF"
+            android:textColorHint="#87ffffff"
+            android:textSize="25sp"
+            android:textStyle="italic"
+            android:paddingStart="20dp"
+            />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
