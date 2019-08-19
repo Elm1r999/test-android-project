@@ -16,7 +16,7 @@ public class DashboardActivity extends AppCompatActivity {
     TextView nameuser, walletuser, review, network, plugins, myapps, mainmenus, pagetitle, pagesubtitle;
     Button btnguide;
     Animation atg, atgtwo, atgthree;
-    ImageView imageView3;
+    ImageView imageView3, imgApps;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,7 @@ public class DashboardActivity extends AppCompatActivity {
         walletuser = findViewById(R.id.walletuser);
 
         imageView3 = findViewById(R.id.imageView3);
+        imgApps = findViewById(R.id.imgApps);
 
         review = findViewById(R.id.review);
         network = findViewById(R.id.network);
@@ -48,6 +49,13 @@ public class DashboardActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent a = new Intent(DashboardActivity.this, AnimationActivityForDashboard.class);
                 startActivity(a);
+            }
+        });
+
+        imgApps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
 

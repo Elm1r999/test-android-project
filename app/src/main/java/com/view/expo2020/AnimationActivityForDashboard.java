@@ -1,8 +1,11 @@
 package com.view.expo2020;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -15,6 +18,7 @@ public class AnimationActivityForDashboard extends AppCompatActivity {
     ImageView packagePlace;
     SeekBar packageRange;
     Animation atg, packageimg;
+    Button btnQuizApp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,16 @@ public class AnimationActivityForDashboard extends AppCompatActivity {
         pagesubtitle = findViewById(R.id.pagesubtitle);
         packagePlace = findViewById(R.id.packagePlace);
         packageRange = findViewById(R.id.packageRange);
+
+        btnQuizApp = findViewById(R.id.btnTakeQuiz);
+
+        btnQuizApp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent a = new Intent(AnimationActivityForDashboard.this, ExpoQuizActivity.class);
+                startActivity(a);
+            }
+        });
 
         packageRange.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
